@@ -20,6 +20,7 @@ body {
   margin: 0;
   font-family: "Helvetica Neue", Arial, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
   color: var(--text);
+  font-size: 18px;
   line-height: 1.65;
   background: #fff;
 }
@@ -253,7 +254,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
 .lb-panel { display: none; }
 .lb-panel.is-active { display: block; animation: lb-fade 0.25s ease; }
 @keyframes lb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
-.panel-note { color: var(--muted); font-size: 0.88rem; margin: 12px 0 0; }
+.panel-note { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
 .panel-note code { font-size: 0.85em; }
 
 /* ---------- Tables ---------- */
@@ -261,7 +262,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
 .ds-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.92rem;
+  font-size: 1rem;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;
@@ -272,7 +273,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
   padding: 12px 16px;
   text-align: center;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.98rem;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
@@ -287,7 +288,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
 .ds-table td.system { font-weight: 700; color: var(--primary-dark); white-space: nowrap; text-align: left; }
 .ds-table td.team { text-align: left; white-space: nowrap; line-height: 1.25; }
 .ds-table td.team .team-name { display: block; font-weight: 700; color: var(--primary-dark); }
-.ds-table td.team .team-handle { display: block; font-size: 0.78rem; color: var(--muted); font-weight: 500; }
+.ds-table td.team .team-handle { display: block; font-size: 0.82rem; color: var(--muted); font-weight: 500; }
 .ds-table td.team .team-handle::before { content: "@"; opacity: 0.6; }
 .ds-table tr.is-informal td.team .team-name { color: var(--muted); }
 .ds-table td.final { font-weight: 800; color: var(--text); }
@@ -311,7 +312,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
 .detail > summary::-webkit-details-marker { display: none; }
 .detail > summary::before { content: "▸ "; }
 .detail[open] > summary::before { content: "▾ "; }
-.detail .ds-table { font-size: 0.86rem; }
+.detail .ds-table { font-size: 0.9rem; }
 .detail .ds-table th, .detail .ds-table td { padding: 9px 12px; }
 
 /* ---------- Status badges ---------- */
@@ -358,7 +359,7 @@ main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 7px 15px 7px 8px;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   color: var(--muted);
 }
 
