@@ -82,10 +82,6 @@
               <tr><td class="rank"><span class="medal">&#129353;</span> 3</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">asr-student</span></td><td>62.87</td><td>64.55</td><td class="final">63.72</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
               <tr><td class="rank">4</td><td class="team"><span class="team-name">SighLogger</span><span class="team-handle">jiasy1</span></td><td>62.94</td><td>64.12</td><td class="final">63.53</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
               <tr><td class="rank">5</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>51.48</td><td>48.02</td><td class="final">49.75</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Audio Team</span><span class="team-handle">airguoqiang</span></td><td>53.02</td><td>46.63</td><td>49.82</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
-              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">SMIIP</span><span class="team-handle">SMIIP Lab</span></td><td>49.57</td><td>48.58</td><td>49.07</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
-              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">GUGUGAGA</span><span class="team-handle">fongming</span></td><td>44.14</td><td>41.75</td><td>42.95</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
-              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">whu</span><span class="team-handle">lvmeiting</span></td><td>41.18</td><td>36.11</td><td>38.64</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
               <tr class="is-baseline"><td>&ndash;</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>34.05</td><td>32.59</td><td>33.32</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
             </tbody>
           </table>
@@ -160,13 +156,10 @@
                 <tr><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>54.00</td><td>57.02</td><td class="final">55.51</td><td><span class="status-badge b-rank">Official #1</span></td></tr>
                 <tr><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>53.32</td><td>57.07</td><td class="final">55.20</td><td><span class="status-badge b-rank">Official #2</span></td></tr>
                 <tr class="is-baseline"><td class="rank">3</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>51.31</td><td>56.18</td><td class="final">53.74</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
-                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">HLT</span><span class="team-handle">luyao</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-dq">Rule violation</span></td></tr>
-                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">hejx11</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
-                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
               </tbody>
             </table>
           </div>
-          <p class="panel-note">Final score $=0.30\times\text{Objective}+0.70\times\text{Subjective}$. <code>HLT / luyao</code> topped the objective metric but was disqualified for a rules violation and has no valid subjective score; <code>XingChenAGI / hejx11</code> and <code>Golden / nv2026</code> registered but submitted no system for verification.</p>
+          <p class="panel-note">Final score $=0.30\times\text{Objective}+0.70\times\text{Subjective}$; Bilingual is the mean of the ZH and EN final scores.</p>
         </div>
 
         <!-- Objective -->
@@ -245,33 +238,38 @@
     <!-- ============================ SCORING ============================ -->
     <section class="section" id="scoring">
       <h2>Scoring</h2>
+
+      <h3 class="score-head">Track 1 &middot; Understanding</h3>
+      <p class="score-desc">Objective automatic evaluation only. The per-language score is:</p>
+      <span class="formula">$$\text{Track1Score}=100\times\bigl[\,0.70\,F1_{\text{micro}}+0.20\,(1-\text{mNTD})+0.10\,(1-\min(\text{Err}_{\text{tagged}},1))\,\bigr]$$</span>
       <ul class="notes-list">
-        <li>
-          <b>Track 1 (Understanding)</b> &mdash; per-language scores derive from detection and transcription metrics
-          (ZH from F1 / mNTD / CER; EN from F1 / mNTD / WER); the reported score is the ZH&ndash;EN mean.
-          Objective automatic evaluation only.
-        </li>
-        <li>
-          <b>Track 2 rubric</b> &mdash; every system is rated on the same five dimensions, normalized to 0&ndash;100:
-          <span class="formula">$$\text{Track2Score}=\operatorname{norm}\!\left(0.30\,A+0.25\,P+0.15\,N+0.15\,Q+0.15\,E\right)$$</span>
-          <span class="legend"><b>A</b> = NVV Accuracy, <b>P</b> = NVV Perceptual Effect, <b>N</b> = Overall Naturalness, <b>Q</b> = Overall Quality, <b>E</b> = Overall Expression. Bilingual is the ZH&ndash;EN mean.</span>
-        </li>
-        <li>
-          <b>Objective</b> &mdash; the five dimensions rated automatically by a large audio-language model (LALM).
-          <b>Subjective</b> &mdash; the same five dimensions from a human listening test (v2).
-        </li>
-        <li>
-          <b>Track 2 overall</b> &mdash; the final ranking blends both:
-          <span class="formula">$$\text{FinalScore}=0.30\times\text{Objective}+0.70\times\text{Subjective}$$</span>
-        </li>
+        <li><b>Event-based Micro F1</b> (0.70) &mdash; pools NVV events across categories; an event is correct only with the right category and transcript-relative position.</li>
+        <li><b>mNTD</b> (0.20) &mdash; placement error between predicted and reference NVV tags; lower is better.</li>
+        <li><b>Tagged-transcript Error</b> (0.10) &mdash; tag-aware CER (Mandarin) / WER (English), with each NVV tag treated as one atomic token.</li>
       </ul>
+      <p class="score-desc">Bilingual score is the mean of the two languages:</p>
+      <span class="formula">$$\text{FinalTrack1Score}=\tfrac{1}{2}\left(\text{Track1Score}_{\text{ZH}}+\text{Track1Score}_{\text{EN}}\right)$$</span>
+
+      <h3 class="score-head">Track 2 &middot; Generation</h3>
+      <p class="score-desc">Each system is rated on five dimensions per language:</p>
+      <span class="formula">$$\text{Track2Score}=100\times\left(0.30A+0.25P+0.15N+0.15Q+0.15E\right)$$</span>
+      <ul class="notes-list">
+        <li><b>A &middot; NVV Accuracy</b> (0.30) &mdash; whether the intended NVV types, numbers, and positions are correctly realized (0 if absent / inaudible).</li>
+        <li><b>P &middot; NVV Perceptual Effect</b> (0.25) &mdash; whether NVVs are clearly audible, recognizable, and perceptually effective.</li>
+        <li><b>N &middot; Overall Naturalness</b> (0.15) &mdash; naturalness, fluency, and acoustic continuity of the full utterance.</li>
+        <li><b>Q &middot; Overall Quality</b> (0.15) &mdash; perceived audio quality, including the absence of noticeable artifacts.</li>
+        <li><b>E &middot; Overall Expression</b> (0.15) &mdash; expressive delivery coherent and appropriate for the content, target NVVs, and conversational context.</li>
+      </ul>
+      <p class="score-desc">Bilingual score is the mean of the two languages:</p>
+      <span class="formula">$$\text{FinalTrack2Score}=\tfrac{1}{2}\left(\text{Track2Score}_{\text{ZH}}+\text{Track2Score}_{\text{EN}}\right)$$</span>
+      <p class="score-desc">The five dimensions are scored two ways &mdash; automatically by a large audio-language model (LALM), the <b>Objective</b> score, and by a human listening test, the <b>Subjective</b> score. The overall ranking combines them:</p>
+      <span class="formula">$$\text{FinalScore}=0.30\times\text{Objective}+0.70\times\text{Subjective}$$</span>
+      <p class="score-desc">Tie-break: higher NVV Accuracy, then NVV Perceptual Effect, then Overall Naturalness.</p>
       <div class="status-legend">
         <p class="legend-title">Status labels</p>
         <ul class="legend-grid">
           <li class="legend-item"><span class="status-badge b-ok">Qualified</span> valid competing submission</li>
           <li class="legend-item"><span class="status-badge b-baseline">Baseline</span> organizers' reference</li>
-          <li class="legend-item"><span class="status-badge b-dq">Rule violation</span> disqualified</li>
-          <li class="legend-item"><span class="status-badge b-nc">No system submitted</span> registered, not verified</li>
         </ul>
       </div>
     </section>
