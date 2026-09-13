@@ -28,7 +28,7 @@ body {
 a { color: var(--primary); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-main { max-width: 980px; margin: 0 auto; padding: 0 32px; }
+main { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
 
 /* ---------- Navbar ---------- */
 .navbar {
