@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="logoGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#818cf8"/>
+      <stop offset="55%" stop-color="#a855f7"/>
+      <stop offset="100%" stop-color="#f472b6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- speech-bubble body -->
+  <path d="M8 14
+           C8 9.6 11.6 6 16 6
+           H48
+           C52.4 6 56 9.6 56 14
+           V34
+           C56 38.4 52.4 42 48 42
+           H30
+           L18 54
+           L20.5 42
+           H16
+           C11.6 42 8 38.4 8 34
+           Z"
+        fill="url(#logoGrad)"/>
+
+  <!-- expressive laughing face: closed happy eyes + open laughing mouth -->
+  <g stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" fill="none">
+    <path d="M18 19 C19.5 16.5 22.5 16.5 24 19"/>
+    <path d="M32 19 C33.5 16.5 36.5 16.5 38 19"/>
+  </g>
+  <path d="M19 26 C19 32 26.5 35.5 32 35.5 C37.5 35.5 41 30.5 41 26
+           C41 24 39.3 23.5 37 24.6 C34.6 25.7 29.4 25.7 27 24.6 C24.6 23.5 19 24 19 26 Z"
+        fill="#ffffff"/>
+
+  <!-- vocal sound waves emanating from the laugh -->
+  <g fill="none" stroke="#fde68a" stroke-width="2.2" stroke-linecap="round" opacity="0.95">
+    <path d="M47 18 C49.5 20.5 49.5 25.5 47 28"/>
+    <path d="M51 14 C55.5 18.5 55.5 27.5 51 32"/>
+  </g>
+</svg>

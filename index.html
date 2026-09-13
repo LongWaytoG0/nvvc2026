@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Official leaderboard for the NVVSpeech Challenge @ ISCSLP 2026 — Track 1 (Understanding) and Track 2 (Generation) objective & subjective results.">
+  <title>Leaderboard — NVVSpeech Challenge @ ISCSLP 2026</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="assets/logo.svg">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.MathJax = { tex: { inlineMath: [['$', '$']], displayMath: [['$$', '$$']] } };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+  <nav class="navbar" id="top">
+    <a class="nav-brand" href="#top">
+      <img class="logo-mark" src="assets/logo.svg" alt="NVVSpeech Challenge logo">
+      <span>NVVSpeech Challenge</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="#track1">Track 1</a></li>
+      <li><a href="#track2">Track 2</a></li>
+      <li><a href="#scoring">Scoring</a></li>
+      <li><a class="nav-ext" href="https://nvvspeech-challenge.github.io/" target="_blank" rel="noopener"> Challenge Site</a></li>
+    </ul>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-decor"><span class="blob b1"></span><span class="blob b2"></span></div>
+    <div class="hero-content">
+      <p class="eyebrow">ISCSLP 2026 &middot; Final Results</p>
+      <h1>Leaderboard</h1>
+      <p class="subtitle">Understanding &amp; Generation of Speech with Non-Verbal Vocalizations.</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============================ TRACK 1 ============================ -->
+    <section class="section" id="track1">
+      <h2>Track 1 &middot; Understanding</h2>
+      <p class="lead">Detecting and transcribing non-verbal vocalizations in speech. </p>
+
+      <div class="track-card track-1">
+        <div class="track-head">
+          <h3>Objective Ranking</h3>
+          <span class="track-tag">F1 &middot; mNTD &middot; CER/WER</span>
+        </div>
+        <p class="track-desc">Final score is the mean of the ZH and EN scores.</p>
+
+        <ol class="podium" aria-label="Track 1 top 3">
+          <li class="podium-card p1">
+            <span class="podium-rank"><span class="medal">&#129351;</span> 1st</span>
+            <span class="podium-team">Moss-Transcribe</span>
+            <span class="podium-handle">OpenMOSS</span>
+            <span class="podium-score">66.39</span>
+          </li>
+          <li class="podium-card p2">
+            <span class="podium-rank"><span class="medal">&#129352;</span> 2nd</span>
+            <span class="podium-team">AcoustiX</span>
+            <span class="podium-handle">yunn1</span>
+            <span class="podium-score">64.80</span>
+          </li>
+          <li class="podium-card p3">
+            <span class="podium-rank"><span class="medal">&#129353;</span> 3rd</span>
+            <span class="podium-team">XingChenAGI</span>
+            <span class="podium-handle">asr-student</span>
+            <span class="podium-score">63.72</span>
+          </li>
+        </ol>
+
+        <div class="table-wrap">
+          <table class="ds-table">
+            <thead>
+              <tr><th>#</th><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
+            </thead>
+            <tbody>
+              <tr><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>65.82</td><td>66.96</td><td class="final">66.39</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">AcoustiX</span><span class="team-handle">yunn1</span></td><td>66.02</td><td>63.58</td><td class="final">64.80</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr><td class="rank"><span class="medal">&#129353;</span> 3</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">asr-student</span></td><td>62.87</td><td>64.55</td><td class="final">63.72</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr><td class="rank">4</td><td class="team"><span class="team-name">SighLogger</span><span class="team-handle">jiasy1</span></td><td>62.94</td><td>64.12</td><td class="final">63.53</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr><td class="rank">5</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>51.48</td><td>48.02</td><td class="final">49.75</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Audio Team</span><span class="team-handle">airguoqiang</span></td><td>53.02</td><td>46.63</td><td>49.82</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">SMIIP</span><span class="team-handle">SMIIP Lab</span></td><td>49.57</td><td>48.58</td><td>49.07</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">GUGUGAGA</span><span class="team-handle">fongming</span></td><td>44.14</td><td>41.75</td><td>42.95</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">whu</span><span class="team-handle">lvmeiting</span></td><td>41.18</td><td>36.11</td><td>38.64</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+              <tr class="is-baseline"><td>&ndash;</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>34.05</td><td>32.59</td><td>33.32</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <details class="detail">
+          <summary>Per-language metric breakdown (top 5)</summary>
+          <div class="table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th>System</th><th>ZH&nbsp;F1&nbsp;&uarr;</th><th>ZH&nbsp;mNTD&nbsp;&darr;</th><th>ZH&nbsp;CER&nbsp;&darr;</th><th>EN&nbsp;F1&nbsp;&uarr;</th><th>EN&nbsp;mNTD&nbsp;&darr;</th><th>EN&nbsp;WER&nbsp;&darr;</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>0.6384</td><td>0.3644</td><td>0.1009</td><td>0.6530</td><td>0.3869</td><td>0.1730</td></tr>
+                <tr><td class="team"><span class="team-name">AcoustiX</span><span class="team-handle">yunn1</span></td><td>0.6364</td><td>0.3412</td><td>0.0961</td><td>0.6185</td><td>0.3988</td><td>0.1758</td></tr>
+                <tr><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">asr-student</span></td><td>0.6202</td><td>0.3592</td><td>0.0961</td><td>0.6151</td><td>0.4279</td><td>0.1694</td></tr>
+                <tr><td class="team"><span class="team-name">SighLogger</span><span class="team-handle">jiasy1</span></td><td>0.6179</td><td>0.3819</td><td>0.1126</td><td>0.6178</td><td>0.4084</td><td>0.1859</td></tr>
+                <tr><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>0.5002</td><td>0.5019</td><td>0.2294</td><td>0.4549</td><td>0.5847</td><td>0.2474</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============================ TRACK 2 ============================ -->
+    <section class="section alt" id="track2">
+      <h2>Track 2 &middot; Generation</h2>
+      <p class="lead">Synthesizing speech with non-verbal vocalizations. Final ranking combines objective automatic scoring with a subjective listening test.</p>
+
+      <div class="track-card track-2">
+        <div class="track-head">
+          <h3>Results</h3>
+          <span class="track-tag">Overall = 0.30&middot;Obj + 0.70&middot;Subj</span>
+        </div>
+
+        <ol class="podium" aria-label="Track 2 top 3">
+          <li class="podium-card p1">
+            <span class="podium-rank"><span class="medal">&#129351;</span> 1st</span>
+            <span class="podium-team">Tencent-HY</span>
+            <span class="podium-handle">someone111</span>
+            <span class="podium-score">55.51</span>
+          </li>
+          <li class="podium-card p2">
+            <span class="podium-rank"><span class="medal">&#129352;</span> 2nd</span>
+            <span class="podium-team">Moss-Transcribe</span>
+            <span class="podium-handle">OpenMOSS</span>
+            <span class="podium-score">55.20</span>
+          </li>
+          <li class="podium-card p3 is-baseline">
+            <span class="podium-rank"><span class="medal">&#129353;</span> 3rd</span>
+            <span class="podium-team">Baseline</span>
+            <span class="podium-handle">Organizers</span>
+            <span class="podium-score">53.74</span>
+          </li>
+        </ol>
+
+        <div class="lb-tabs" role="tablist">
+          <button class="lb-tab is-active" role="tab" data-panel="t2-overall">Overall</button>
+          <button class="lb-tab" role="tab" data-panel="t2-objective">Objective</button>
+          <button class="lb-tab" role="tab" data-panel="t2-subjective">Subjective</button>
+        </div>
+
+        <!-- Overall -->
+        <div class="lb-panel is-active" id="t2-overall">
+          <div class="table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th>#</th><th>Team</th><th>ZH Final&nbsp;&uarr;</th><th>EN Final&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>54.00</td><td>57.02</td><td class="final">55.51</td><td><span class="status-badge b-rank">Official #1</span></td></tr>
+                <tr><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>53.32</td><td>57.07</td><td class="final">55.20</td><td><span class="status-badge b-rank">Official #2</span></td></tr>
+                <tr class="is-baseline"><td class="rank">3</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>51.31</td><td>56.18</td><td class="final">53.74</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">HLT</span><span class="team-handle">luyao</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-dq">Rule violation</span></td></tr>
+                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">hejx11</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td><span class="status-badge b-nc">No system submitted</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="panel-note">Final score $=0.30\times\text{Objective}+0.70\times\text{Subjective}$. <code>HLT / luyao</code> topped the objective metric but was disqualified for a rules violation and has no valid subjective score; <code>XingChenAGI / hejx11</code> and <code>Golden / nv2026</code> registered but submitted no system for verification.</p>
+        </div>
+
+        <!-- Objective -->
+        <div class="lb-panel" id="t2-objective">
+          <div class="table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th>#</th><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Final&nbsp;&uarr;</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="rank">1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>75.97</td><td>73.77</td><td class="final">74.87</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr class="is-baseline"><td class="rank">2</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>77.62</td><td>70.30</td><td class="final">73.96</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr><td class="rank">3</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>76.22</td><td>69.66</td><td class="final">72.94</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="panel-note">LALM automatic evaluation &mdash; $\text{Track2Score}=\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$; Final is the mean of ZH and EN, and forms the objective component of the Overall score.</p>
+
+          <details class="detail">
+            <summary>LALM per-dimension ratings (1&ndash;5)</summary>
+            <div class="table-wrap">
+              <table class="ds-table">
+                <thead>
+                  <tr><th>System</th><th>Lang</th><th>A&nbsp;&uarr;</th><th>P&nbsp;&uarr;</th><th>N&nbsp;&uarr;</th><th>Q&nbsp;&uarr;</th><th>E&nbsp;&uarr;</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="team" rowspan="2"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>ZH</td><td>4.3575</td><td>4.3500</td><td>3.7213</td><td>3.0463</td><td>4.1938</td></tr>
+                  <tr><td>EN</td><td>4.4638</td><td>4.1300</td><td>3.5288</td><td>3.0750</td><td>3.9250</td></tr>
+                  <tr class="is-baseline"><td class="team" rowspan="2"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>ZH</td><td>4.5225</td><td>4.4063</td><td>3.7325</td><td>3.0263</td><td>4.2175</td></tr>
+                  <tr class="is-baseline"><td>EN</td><td>4.3675</td><td>3.8963</td><td>3.3650</td><td>3.0800</td><td>3.7400</td></tr>
+                  <tr><td class="team" rowspan="2"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>ZH</td><td>4.5125</td><td>4.2938</td><td>3.6750</td><td>3.0775</td><td>4.0575</td></tr>
+                  <tr><td>EN</td><td>4.3638</td><td>3.8438</td><td>3.3325</td><td>3.1550</td><td>3.6225</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="panel-note"><b>A</b> NVV Accuracy (30%) &middot; <b>P</b> NVV Perceptual Effect (25%) &middot; <b>N</b> Overall Naturalness (15%) &middot; <b>Q</b> Overall Quality (15%) &middot; <b>E</b> Overall Expression (15%). Rated by the large audio-language model.</p>
+          </details>
+        </div>
+
+        <!-- Subjective -->
+        <div class="lb-panel" id="t2-subjective">
+          <div class="table-wrap">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
+              </thead>
+              <tbody>
+                <tr><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>44.48</td><td>51.60</td><td class="final">48.04</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>43.61</td><td>49.91</td><td class="final">46.76</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr class="is-baseline"><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>40.03</td><td>50.13</td><td class="final">45.08</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="panel-note">Human listening test &mdash; same $\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$ rubric on a 0&ndash;100 scale; Bilingual is the mean of ZH and EN.</p>
+
+          <details class="detail">
+            <summary>Human listening per-dimension ratings (1&ndash;5, bilingual)</summary>
+            <div class="table-wrap">
+              <table class="ds-table">
+                <thead>
+                  <tr><th>System</th><th>A&nbsp;&uarr;</th><th>P&nbsp;&uarr;</th><th>N&nbsp;&uarr;</th><th>Q&nbsp;&uarr;</th><th>E&nbsp;&uarr;</th><th>Overall&nbsp;&uarr;</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>2.835</td><td>2.485</td><td>3.233</td><td>3.513</td><td>2.919</td><td>2.997</td></tr>
+                  <tr><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>2.773</td><td>2.440</td><td>3.204</td><td>3.400</td><td>2.921</td><td>2.948</td></tr>
+                  <tr class="is-baseline"><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>2.671</td><td>2.327</td><td>3.179</td><td>3.352</td><td>2.935</td><td>2.893</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="panel-note"><b>A</b> NVV Accuracy (30%) &middot; <b>P</b> NVV Perceptual Effect (25%) &middot; <b>N</b> Overall Naturalness (15%) &middot; <b>Q</b> Overall Quality (15%) &middot; <b>E</b> Overall Expression (15%). Bilingual (ZH+EN) means from the 160-item human listening test; <b>Overall</b> is the unweighted dimension mean.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SCORING ============================ -->
+    <section class="section" id="scoring">
+      <h2>Scoring</h2>
+      <ul class="notes-list">
+        <li>
+          <b>Track 1 (Understanding)</b> &mdash; per-language scores derive from detection and transcription metrics
+          (ZH from F1 / mNTD / CER; EN from F1 / mNTD / WER); the reported score is the ZH&ndash;EN mean.
+          Objective automatic evaluation only.
+        </li>
+        <li>
+          <b>Track 2 rubric</b> &mdash; every system is rated on the same five dimensions, normalized to 0&ndash;100:
+          <span class="formula">$$\text{Track2Score}=\operatorname{norm}\!\left(0.30\,A+0.25\,P+0.15\,N+0.15\,Q+0.15\,E\right)$$</span>
+          <span class="legend"><b>A</b> = NVV Accuracy, <b>P</b> = NVV Perceptual Effect, <b>N</b> = Overall Naturalness, <b>Q</b> = Overall Quality, <b>E</b> = Overall Expression. Bilingual is the ZH&ndash;EN mean.</span>
+        </li>
+        <li>
+          <b>Objective</b> &mdash; the five dimensions rated automatically by a large audio-language model (LALM).
+          <b>Subjective</b> &mdash; the same five dimensions from a human listening test (v2).
+        </li>
+        <li>
+          <b>Track 2 overall</b> &mdash; the final ranking blends both:
+          <span class="formula">$$\text{FinalScore}=0.30\times\text{Objective}+0.70\times\text{Subjective}$$</span>
+        </li>
+      </ul>
+      <div class="status-legend">
+        <p class="legend-title">Status labels</p>
+        <ul class="legend-grid">
+          <li class="legend-item"><span class="status-badge b-ok">Qualified</span> valid competing submission</li>
+          <li class="legend-item"><span class="status-badge b-baseline">Baseline</span> organizers' reference</li>
+          <li class="legend-item"><span class="status-badge b-dq">Rule violation</span> disqualified</li>
+          <li class="legend-item"><span class="status-badge b-nc">No system submitted</span> registered, not verified</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>NVVSpeech Challenge @ ISCSLP 2026 &middot;
+      <a href="https://nvvspeech-challenge.github.io/" target="_blank" rel="noopener">Challenge website</a> &middot;
+      <a href="https://github.com/NVVSpeech-Challenge" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
