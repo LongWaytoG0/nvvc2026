@@ -47,6 +47,10 @@
         <div class="track-head">
           <h3>Objective Ranking</h3>
           <span class="track-tag">F1 &middot; mNTD &middot; CER/WER</span>
+          <div class="rank-toggle" role="group" aria-label="Ranking mode">
+            <button type="button" class="rank-toggle-btn is-active" data-mode="competition" aria-pressed="true">Competition ranking</button>
+            <button type="button" class="rank-toggle-btn" data-mode="all" aria-pressed="false">All systems ranking</button>
+          </div>
         </div>
         <p class="track-desc">Final score is the mean of the ZH and EN scores.</p>
 
@@ -72,24 +76,25 @@
         </ol>
 
         <div class="table-wrap">
-          <table class="ds-table">
+          <!-- Rankable: script.js reorders these rows and rewrites the # column. -->
+          <table class="ds-table" data-rankable="1">
             <thead>
               <tr><th>#</th><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
             </thead>
             <tbody>
-              <tr><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>65.82</td><td>66.96</td><td class="final">66.39</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">AcoustiX</span><span class="team-handle">yunn1</span></td><td>66.02</td><td>63.58</td><td class="final">64.80</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr><td class="rank"><span class="medal">&#129353;</span> 3</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">asr-student</span></td><td>62.87</td><td>64.55</td><td class="final">63.72</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr><td class="rank">4</td><td class="team"><span class="team-name">SighLogger</span><span class="team-handle">jiasy1</span></td><td>62.94</td><td>64.12</td><td class="final">63.53</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr><td class="rank">5</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>51.48</td><td>48.02</td><td class="final">49.75</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-              <tr class="is-baseline"><td>&ndash;</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>34.05</td><td>32.59</td><td>33.32</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
-              <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Gemini 3.1 Flash TTS Preview</span></td><td>53.04</td><td>52.70</td><td class="final">52.87</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
+              <tr data-score="66.39" data-status="qualified" data-ranked="1" data-medal="1"><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>65.82</td><td>66.96</td><td class="final">66.39</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr data-score="64.80" data-status="qualified" data-ranked="1" data-medal="2"><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">AcoustiX</span><span class="team-handle">yunn1</span></td><td>66.02</td><td>63.58</td><td class="final">64.80</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr data-score="63.72" data-status="qualified" data-ranked="1" data-medal="3"><td class="rank"><span class="medal">&#129353;</span> 3</td><td class="team"><span class="team-name">XingChenAGI</span><span class="team-handle">asr-student</span></td><td>62.87</td><td>64.55</td><td class="final">63.72</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr data-score="63.53" data-status="qualified" data-ranked="1"><td class="rank">4</td><td class="team"><span class="team-name">SighLogger</span><span class="team-handle">jiasy1</span></td><td>62.94</td><td>64.12</td><td class="final">63.53</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr data-score="49.75" data-status="qualified" data-ranked="1"><td class="rank">5</td><td class="team"><span class="team-name">Golden</span><span class="team-handle">nv2026</span></td><td>51.48</td><td>48.02</td><td class="final">49.75</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+              <tr class="is-baseline" data-score="33.32" data-status="baseline"><td class="rank">&ndash;</td><td class="team"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>34.05</td><td>32.59</td><td>33.32</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+              <tr class="is-informal" data-score="52.87" data-status="commercial"><td class="rank">&ndash;</td><td class="team"><span class="team-name">Gemini 3.1 Flash TTS Preview</span></td><td>53.04</td><td>52.70</td><td class="final">52.87</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
             </tbody>
           </table>
         </div>
 
         <details class="detail" open>
-          <summary>Per-language metric breakdown (top 5 + commercial systems)</summary>
+          <summary>Per-language metric breakdown (top 5 + non-competing systems)</summary>
           <div class="table-wrap">
             <table class="ds-table">
               <thead>
@@ -118,9 +123,15 @@
         <div class="track-head">
           <h3>Results</h3>
           <span class="track-tag">Overall = 0.30&middot;Obj + 0.70&middot;Subj</span>
+          <div class="rank-toggle" role="group" aria-label="Ranking mode">
+            <button type="button" class="rank-toggle-btn is-active" data-mode="competition" aria-pressed="true">Competition ranking</button>
+            <button type="button" class="rank-toggle-btn" data-mode="all" aria-pressed="false">All systems ranking</button>
+          </div>
         </div>
 
-        <ol class="podium" aria-label="Track 2 top 3">
+        <!-- Two podiums, one per ranking mode; CSS shows only the matching one.
+             Both show the Overall ranking — they sit above the tabs and do not follow them. -->
+        <ol class="podium mode-competition" aria-label="Track 2 overall top 3 — competition ranking">
           <li class="podium-card p1">
             <span class="podium-rank"><span class="medal">&#129351;</span> 1st</span>
             <span class="podium-team">Tencent-HY</span>
@@ -135,9 +146,33 @@
           </li>
           <li class="podium-card p3 is-baseline">
             <span class="podium-rank"><span class="medal">&#129353;</span> 3rd</span>
-            <span class="podium-team">Baseline</span>
+            <span class="podium-team">NVV-Gen</span>
             <span class="podium-handle">Organizers</span>
             <span class="podium-score">53.74</span>
+          </li>
+        </ol>
+
+        <ol class="podium mode-all" aria-label="Track 2 overall top 3 — all systems ranking">
+          <li class="podium-card p1 is-noncompeting">
+            <span class="podium-rank">1st</span>
+            <span class="podium-team">VocalMind</span>
+            <span class="podium-handle">Organizers</span>
+            <span class="podium-score">56.18</span>
+            <span class="status-badge b-noncompeting">Non-competing</span>
+          </li>
+          <li class="podium-card p2">
+            <span class="podium-rank">2nd</span>
+            <span class="podium-team">Tencent-HY</span>
+            <span class="podium-handle">someone111</span>
+            <span class="podium-score">55.51</span>
+            <span class="status-badge b-rank">Official #1</span>
+          </li>
+          <li class="podium-card p3">
+            <span class="podium-rank">3rd</span>
+            <span class="podium-team">Moss-Transcribe</span>
+            <span class="podium-handle">OpenMOSS</span>
+            <span class="podium-score">55.20</span>
+            <span class="status-badge b-rank">Official #2</span>
           </li>
         </ol>
 
@@ -150,49 +185,55 @@
         <!-- Overall -->
         <div class="lb-panel is-active" id="t2-overall">
           <div class="table-wrap">
-            <table class="ds-table">
+            <table class="ds-table" data-rankable="1">
               <thead>
                 <tr><th>#</th><th>Team</th><th>ZH Final&nbsp;&uarr;</th><th>EN Final&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
               </thead>
               <tbody>
-                <tr><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>54.00</td><td>57.02</td><td class="final">55.51</td><td><span class="status-badge b-rank">Official #1</span></td></tr>
-                <tr><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>53.32</td><td>57.07</td><td class="final">55.20</td><td><span class="status-badge b-rank">Official #2</span></td></tr>
-                <tr class="is-baseline"><td class="rank">3</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>51.31</td><td>56.18</td><td class="final">53.74</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr data-score="55.51" data-status="qualified" data-ranked="1" data-medal="1"><td class="rank"><span class="medal">&#129351;</span> 1</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>54.00</td><td>57.02</td><td class="final">55.51</td><td><span class="status-badge b-rank">Official #1</span></td></tr>
+                <tr data-score="55.20" data-status="qualified" data-ranked="1" data-medal="2"><td class="rank"><span class="medal">&#129352;</span> 2</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>53.32</td><td>57.07</td><td class="final">55.20</td><td><span class="status-badge b-rank">Official #2</span></td></tr>
+                <tr class="is-baseline" data-score="53.74" data-status="baseline" data-ranked="1"><td class="rank">3</td><td class="team"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>51.31</td><td>56.18</td><td class="final">53.74</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr class="is-noncompeting" data-score="56.18" data-status="noncompeting"><td class="rank">&ndash;</td><td class="team"><span class="team-name">VocalMind</span><span class="team-handle">Organizers</span></td><td>53.62</td><td>58.74</td><td class="final">56.18</td><td><span class="status-badge b-noncompeting">Non-competing</span></td></tr>
               </tbody>
             </table>
           </div>
-          <p class="panel-note">Final score $=0.30\times\text{Objective}+0.70\times\text{Subjective}$; Bilingual is the mean of the ZH and EN final scores. Commercial systems have objective scores only and are listed in the Objective tab.</p>
+          <p class="panel-note">Final score $=0.30\times\text{Objective}+0.70\times\text{Subjective}$; Bilingual is the mean of the ZH and EN final scores. <b>VocalMind</b> is the organizers' post-trained system, listed for reference only — it does not enter the official award ranking. Commercial systems have objective scores only and are listed in the Objective tab. Switching to the <b>All systems ranking</b> view re-orders the table by score and changes no official result.</p>
         </div>
 
         <!-- Objective -->
         <div class="lb-panel" id="t2-objective">
           <div class="table-wrap">
-            <table class="ds-table">
+            <table class="ds-table" data-rankable="1">
               <thead>
                 <tr><th>#</th><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Final&nbsp;&uarr;</th><th>Status</th></tr>
               </thead>
               <tbody>
-                <tr><td class="rank">1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>75.97</td><td>73.77</td><td class="final">74.87</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-                <tr class="is-baseline"><td class="rank">2</td><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>77.62</td><td>70.30</td><td class="final">73.96</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
-                <tr><td class="rank">3</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>76.22</td><td>69.66</td><td class="final">72.94</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">Gemini 3.1 Flash TTS Preview</span></td><td>83.50</td><td>83.89</td><td class="final">83.70</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
-                <tr class="is-informal"><td>&ndash;</td><td class="team"><span class="team-name">ElevenLabs</span></td><td>83.03</td><td>80.41</td><td class="final">81.72</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
+                <tr data-score="74.87" data-status="qualified" data-ranked="1"><td class="rank">1</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>75.97</td><td>73.77</td><td class="final">74.87</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr class="is-baseline" data-score="73.96" data-status="baseline" data-ranked="1"><td class="rank">2</td><td class="team"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>77.62</td><td>70.30</td><td class="final">73.96</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr data-score="72.94" data-status="qualified" data-ranked="1"><td class="rank">3</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>76.22</td><td>69.66</td><td class="final">72.94</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr class="is-informal" data-score="83.70" data-status="commercial"><td class="rank">&ndash;</td><td class="team"><span class="team-name">Gemini 3.1 Flash TTS Preview</span></td><td>83.50</td><td>83.89</td><td class="final">83.70</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
+                <tr class="is-informal" data-score="81.72" data-status="commercial"><td class="rank">&ndash;</td><td class="team"><span class="team-name">ElevenLabs</span></td><td>83.03</td><td>80.41</td><td class="final">81.72</td><td><span class="status-badge b-nc">Commercial</span></td></tr>
+                <tr class="is-noncompeting" data-score="75.80" data-status="noncompeting"><td class="rank">&ndash;</td><td class="team"><span class="team-name">VocalMind</span><span class="team-handle">Organizers</span></td><td>79.39</td><td>72.21</td><td class="final">75.80</td><td><span class="status-badge b-noncompeting">Non-competing</span></td></tr>
               </tbody>
             </table>
           </div>
-          <p class="panel-note">LALM automatic evaluation &mdash; $\text{Track2Score}=\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$; Final is the mean of ZH and EN, and forms the objective component of the Overall score. Commercial systems (Gemini 3.1 Flash TTS Preview, ElevenLabs) are shown for comparison, but no human listening test was run for them, so they do not enter the Overall ranking.</p>
+          <p class="panel-note">LALM automatic evaluation &mdash; $\text{Track2Score}=\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$; Final is the mean of ZH and EN, and forms the objective component of the Overall score. Commercial systems (Gemini 3.1 Flash TTS Preview, ElevenLabs) and <b>VocalMind</b>, the organizers' non-competing system, are shown for comparison; no human listening test was run for the commercial systems, and VocalMind takes no part in the official ranking, so none of them enter the Overall ranking.</p>
 
           <details class="detail" open>
             <summary>LALM per-dimension ratings (1&ndash;5)</summary>
             <div class="table-wrap">
+              <!-- Reference breakdown only — deliberately NOT data-rankable:
+                   rows are paired by rowspan and any reorder would split them. -->
               <table class="ds-table">
                 <thead>
                   <tr><th>System</th><th>Lang</th><th>A&nbsp;&uarr;</th><th>P&nbsp;&uarr;</th><th>N&nbsp;&uarr;</th><th>Q&nbsp;&uarr;</th><th>E&nbsp;&uarr;</th></tr>
                 </thead>
                 <tbody>
+                  <tr class="is-noncompeting"><td class="team" rowspan="2"><span class="team-name">VocalMind</span><span class="team-handle">Organizers</span></td><td>ZH</td><td>4.5975</td><td>4.4775</td><td>3.8200</td><td>3.0488</td><td>4.3100</td></tr>
+                  <tr class="is-noncompeting"><td>EN</td><td>4.4488</td><td>3.9925</td><td>3.4538</td><td>3.1113</td><td>3.8063</td></tr>
                   <tr><td class="team" rowspan="2"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>ZH</td><td>4.3575</td><td>4.3500</td><td>3.7213</td><td>3.0463</td><td>4.1938</td></tr>
                   <tr><td>EN</td><td>4.4638</td><td>4.1300</td><td>3.5288</td><td>3.0750</td><td>3.9250</td></tr>
-                  <tr class="is-baseline"><td class="team" rowspan="2"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>ZH</td><td>4.5225</td><td>4.4063</td><td>3.7325</td><td>3.0263</td><td>4.2175</td></tr>
+                  <tr class="is-baseline"><td class="team" rowspan="2"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>ZH</td><td>4.5225</td><td>4.4063</td><td>3.7325</td><td>3.0263</td><td>4.2175</td></tr>
                   <tr class="is-baseline"><td>EN</td><td>4.3675</td><td>3.8963</td><td>3.3650</td><td>3.0800</td><td>3.7400</td></tr>
                   <tr><td class="team" rowspan="2"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>ZH</td><td>4.5125</td><td>4.2938</td><td>3.6750</td><td>3.0775</td><td>4.0575</td></tr>
                   <tr><td>EN</td><td>4.3638</td><td>3.8438</td><td>3.3325</td><td>3.1550</td><td>3.6225</td></tr>
@@ -210,30 +251,33 @@
         <!-- Subjective -->
         <div class="lb-panel" id="t2-subjective">
           <div class="table-wrap">
-            <table class="ds-table">
+            <table class="ds-table" data-rankable="1">
               <thead>
-                <tr><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
+                <tr><th>#</th><th>Team</th><th>ZH&nbsp;&uarr;</th><th>EN&nbsp;&uarr;</th><th>Bilingual&nbsp;&uarr;</th><th>Status</th></tr>
               </thead>
               <tbody>
-                <tr><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>44.48</td><td>51.60</td><td class="final">48.04</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-                <tr><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>43.61</td><td>49.91</td><td class="final">46.76</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
-                <tr class="is-baseline"><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>40.03</td><td>50.13</td><td class="final">45.08</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr data-score="48.04" data-status="qualified" data-ranked="1"><td class="rank">1</td><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>44.48</td><td>51.60</td><td class="final">48.04</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr data-score="46.76" data-status="qualified" data-ranked="1"><td class="rank">2</td><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>43.61</td><td>49.91</td><td class="final">46.76</td><td><span class="status-badge b-ok">Qualified</span></td></tr>
+                <tr class="is-baseline" data-score="45.08" data-status="baseline" data-ranked="1"><td class="rank">3</td><td class="team"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>40.03</td><td>50.13</td><td class="final">45.08</td><td><span class="status-badge b-baseline">Baseline</span></td></tr>
+                <tr class="is-noncompeting" data-score="47.77" data-status="noncompeting"><td class="rank">&ndash;</td><td class="team"><span class="team-name">VocalMind</span><span class="team-handle">Organizers</span></td><td>42.57</td><td>52.96</td><td class="final">47.77</td><td><span class="status-badge b-noncompeting">Non-competing</span></td></tr>
               </tbody>
             </table>
           </div>
-          <p class="panel-note">Human listening test &mdash; same $\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$ rubric on a 0&ndash;100 scale; Bilingual is the mean of ZH and EN.</p>
+          <p class="panel-note">Human listening test &mdash; same $\operatorname{norm}(0.30A+0.25P+0.15N+0.15Q+0.15E)$ rubric on a 0&ndash;100 scale; Bilingual is the mean of ZH and EN. VocalMind took part in the listening test but is out of competition.</p>
 
           <details class="detail" open>
             <summary>Human listening per-dimension ratings (1&ndash;5, bilingual)</summary>
             <div class="table-wrap">
+              <!-- Reference breakdown only — deliberately NOT data-rankable. -->
               <table class="ds-table">
                 <thead>
                   <tr><th>System</th><th>A&nbsp;&uarr;</th><th>P&nbsp;&uarr;</th><th>N&nbsp;&uarr;</th><th>Q&nbsp;&uarr;</th><th>E&nbsp;&uarr;</th><th>Overall&nbsp;&uarr;</th></tr>
                 </thead>
                 <tbody>
                   <tr><td class="team"><span class="team-name">Tencent-HY</span><span class="team-handle">someone111</span></td><td>2.835</td><td>2.485</td><td>3.233</td><td>3.513</td><td>2.919</td><td>2.997</td></tr>
+                  <tr class="is-noncompeting"><td class="team"><span class="team-name">VocalMind</span><span class="team-handle">Organizers</span></td><td>2.804</td><td>2.446</td><td>3.227</td><td>3.450</td><td>3.044</td><td>2.994</td></tr>
                   <tr><td class="team"><span class="team-name">Moss-Transcribe</span><span class="team-handle">OpenMOSS</span></td><td>2.773</td><td>2.440</td><td>3.204</td><td>3.400</td><td>2.921</td><td>2.948</td></tr>
-                  <tr class="is-baseline"><td class="team"><span class="team-name">Baseline</span><span class="team-handle">Organizers</span></td><td>2.671</td><td>2.327</td><td>3.179</td><td>3.352</td><td>2.935</td><td>2.893</td></tr>
+                  <tr class="is-baseline"><td class="team"><span class="team-name">NVV-Gen</span><span class="team-handle">Organizers</span></td><td>2.671</td><td>2.327</td><td>3.179</td><td>3.352</td><td>2.935</td><td>2.893</td></tr>
                 </tbody>
               </table>
             </div>
@@ -277,9 +321,11 @@
         <p class="legend-title">Status labels</p>
         <ul class="legend-grid">
           <li class="legend-item"><span class="status-badge b-ok">Qualified</span> valid competing submission</li>
-          <li class="legend-item"><span class="status-badge b-baseline">Baseline</span> organizers' reference</li>
+          <li class="legend-item"><span class="status-badge b-baseline">Baseline</span> organizers' NVV-Gen reference</li>
+          <li class="legend-item"><span class="status-badge b-noncompeting">Non-competing</span> organizers' internal system, out of competition</li>
           <li class="legend-item"><span class="status-badge b-nc">Commercial</span> external system, out of competition</li>
         </ul>
+        <p class="legend-note">Each leaderboard has a <b>Competition ranking</b> / <b>All systems ranking</b> toggle. <b>Competition ranking</b> is the official award ranking: only qualified submissions and the NVV-Gen reference carry a position. <b>All systems ranking</b> re-orders every evaluated system &mdash; including the non-competing and commercial ones &mdash; by score, and changes no official result.</p>
       </div>
     </section>
   </main>

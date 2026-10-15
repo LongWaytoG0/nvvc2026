@@ -226,6 +226,19 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
 .podium-handle::before { content: "@"; opacity: 0.6; }
 .podium-score { font-size: 1.85rem; font-weight: 800; color: var(--text); letter-spacing: -0.01em; margin-top: 6px; font-variant-numeric: tabular-nums; }
 .podium-card.p1 .podium-score { font-size: 2.1rem; }
+.podium-card .status-badge { margin-top: 6px; }
+/* A non-competing system can take the top slot in the all-systems view. */
+.podium-card.p1.is-noncompeting {
+  border-top-color: #7c3aed;
+  background: linear-gradient(180deg, #faf8ff, #f3f0ff);
+  box-shadow: 0 12px 30px rgba(124, 58, 237, 0.18);
+}
+.podium-card.p1.is-noncompeting .podium-team { color: #5b21b6; }
+
+/* ---------- Podium variants (one per ranking mode) ---------- */
+.podium.mode-all { display: none; }
+.track-card[data-rank-mode="all"] .podium.mode-competition { display: none; }
+.track-card[data-rank-mode="all"] .podium.mode-all { display: grid; }
 
 /* ---------- Tabs ---------- */
 .lb-tabs {
@@ -256,6 +269,35 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
 @keyframes lb-fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .panel-note { color: var(--muted); font-size: 0.92rem; margin: 12px 0 0; }
 .panel-note code { font-size: 0.85em; }
+
+/* ---------- Ranking-mode segmented toggle ---------- */
+.rank-toggle {
+  margin-left: auto;
+  align-self: center;
+  display: inline-flex;
+  gap: 3px;
+  padding: 3px;
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+}
+.rank-toggle-btn {
+  appearance: none;
+  border: 0;
+  background: none;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  padding: 5px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.rank-toggle-btn:hover { color: var(--primary-dark); }
+.rank-toggle-btn.is-active { background: var(--primary); color: #fff; }
+.rank-toggle-btn:focus-visible { outline: 2px solid var(--primary-dark); outline-offset: 2px; }
 
 /* ---------- Tables ---------- */
 .table-wrap { overflow-x: auto; margin-top: 18px; }
@@ -298,6 +340,14 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
 .ds-table tr.is-informal td.system { color: var(--muted); }
 .ds-table tr.is-baseline { background: #fdf2f8; }
 .ds-table tr.is-baseline:hover { background: #fce7f3; }
+.ds-table tr.is-noncompeting { background: #f5f3ff; }
+.ds-table tr.is-noncompeting:hover { background: #ede9fe; }
+.ds-table tr.is-noncompeting td.team .team-name { color: #5b21b6; }
+/* These rows never carried a .rank class before, so the shared .rank styling
+   (bold, indigo) must not newly apply to their "–" placeholder. */
+.ds-table tr.is-baseline td.rank,
+.ds-table tr.is-informal td.rank,
+.ds-table tr.is-noncompeting td.rank { font-weight: 700; color: inherit; }
 
 /* Sub-metric detail (collapsible) */
 .detail { margin-top: 14px; }
@@ -330,6 +380,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
 .status-badge.b-baseline { background: var(--accent-pink); }
 .status-badge.b-dq { background: #b91c1c; }
 .status-badge.b-nc { background: #6b7280; }
+.status-badge.b-noncompeting { background: #7c3aed; }
 .status-badge.b-rank { background: var(--primary); }
 .status-badge.b-ok { background: #16a34a; }
 
@@ -362,6 +413,8 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
   font-size: 0.9rem;
   color: var(--muted);
 }
+.legend-note { color: var(--muted); font-size: 0.9rem; margin: 14px 0 0; }
+.legend-note b { color: var(--text); }
 
 /* ---------- Scoring notes ---------- */
 .score-head {
@@ -416,6 +469,7 @@ main { max-width: 1600px; margin: 0 auto; padding: 0 32px; }
   .hero h1 { font-size: 2rem; }
   main { padding: 0 18px; }
   .track-card { padding: 22px 18px 18px; }
+  .rank-toggle { margin-left: 0; width: 100%; justify-content: center; }
   .podium { grid-template-columns: 1fr; gap: 10px; }
   .podium-card.p1 { transform: none; }
   .podium-card.p1:hover { transform: translateY(-3px); }
